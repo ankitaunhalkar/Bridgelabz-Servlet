@@ -1,0 +1,31 @@
+package com.bridgelabz.basics;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.*;
+
+
+public class RegistrationFilter implements Filter {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+        
+  PrintWriter out=response.getWriter();  
+  
+  String 
+  String password=request.getParameter("password");  
+  if(password.equals("admin")){  
+  chain.doFilter(request, response);//sends request to next resource  
+  }  
+  else{  
+  out.print("username or password error!");  
+  RequestDispatcher rd=request.getRequestDispatcher("index.html");  
+  rd.include(request, response);  
+  }  
+		
+	}
+
+}

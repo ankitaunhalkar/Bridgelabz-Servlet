@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome to page</h1>
+<!-- servlet request and response -->
+<form action="servletRequestDemo">
+<input type="text" name="name"/>
+<input type="submit" value="submit"></form>
+
+<!-- servlet config and context -->
+<form action="Servlet1">
+<input type="submit" value="servlet1"/>
+</form>
+
+<!-- servlet config and context -->
+<form action="Servlet2">
+<input type="submit" value="servlet2"/>
+</form>
+
+<form action="">
+Username:<input type = "text" name="user">
+Password:<input type = "password" name="pass">
+<input type="submit" value="Submit"> 
+</form>
+</body>
+</html>

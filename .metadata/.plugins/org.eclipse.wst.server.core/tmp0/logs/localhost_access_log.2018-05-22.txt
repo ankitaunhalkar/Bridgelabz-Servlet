@@ -1,0 +1,12 @@
+127.0.0.1 - - [22/May/2018:09:25:44 +0530] "GET / HTTP/1.1" 404 1073
+127.0.0.1 - - [22/May/2018:09:25:45 +0530] "GET /Servlet/ HTTP/1.1" 304 -
+127.0.0.1 - - [22/May/2018:09:25:47 +0530] "GET /Servlet/Register.html HTTP/1.1" 304 -
+127.0.0.1 - - [22/May/2018:09:25:49 +0530] "GET /Servlet/RegistrationServlet?name=&email=&password=&university= HTTP/1.1" 200 806
+127.0.0.1 - - [22/May/2018:09:25:54 +0530] "GET /Servlet/RegistrationServlet?name=a&email=a&password=a&university=a HTTP/1.1" 200 19
+127.0.0.1 - - [22/May/2018:09:27:00 +0530] "GET / HTTP/1.1" 404 1073
+127.0.0.1 - - [22/May/2018:09:27:04 +0530] "GET /Servlet/RegistrationServlet?name=&email=&password=&university= HTTP/1.1" 200 807
+127.0.0.1 - - [22/May/2018:09:27:14 +0530] "GET /Servlet/RegistrationServlet?name=a&email=a&password=a&university=a HTTP/1.1" 200 19
+127.0.0.1 - - [22/May/2018:09:27:36 +0530] "GET /Servlet/RegistrationServlet?name=a&email=a&password=a&university=a HTTP/1.1" 200 19
+127.0.0.1 - - [22/May/2018:09:30:07 +0530] "GET / HTTP/1.1" 404 1073
+127.0.0.1 - - [22/May/2018:09:30:11 +0530] "GET /Servlet/RegistrationServlet?name=&email=&password=&university= HTTP/1.1" 200 807
+127.0.0.1 - - [22/May/2018:09:30:17 +0530] "GET /Servlet/RegistrationServlet?name=a&email=a&password=a&university=a HTTP/1.1" 200 19

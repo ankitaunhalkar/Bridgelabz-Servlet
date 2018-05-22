@@ -1,0 +1,43 @@
+package com.bridgelabz.basics;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class RegistrationFilter implements Filter {
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
+		PrintWriter out = response.getWriter();
+
+		// Name:<input type="text" name="name">
+		// Email:<input type="text" name="email">
+		// Password:<input type="text" name="password">
+		// University:<input type="text" name="university">
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String university = request.getParameter("university");
+
+		if (name.matches("[a-zA-Z]") && email.matches("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$")
+				&& password.matches("[a-zA-Z]") && university.matches("[a-zA-Z]")) {
+
+			chain.doFilter(request, response);// sends request to next resource
+		} else {
+			out.print("username or password error!");
+			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			rd.include(request, response);
+		}
+
+	}
+
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h4>Register</h4>
+
+<form action="RegistrationServlet">
+<pre>
+Name:<input type="text" name="name">
+Email:<input type="text" name="email">
+Password:<input type="text" name="password">
+University:<input type="text" name="university">
+<input type="submit" value="Register">
+</pre>
+</form>
+
+</body>
+</html>
