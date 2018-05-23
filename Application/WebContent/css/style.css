@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.form {
+  margin-top: 5%;
+  text-align: center;
+  padding: 20px;
+  background-color: LightGrey;
+  border-radius: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+.btncolor {
+     background-color: #4CAF50;
+     color: white;
+     padding: 10px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+}
+.btncolor:hover {
+    background-color: #6495ED;
+}
