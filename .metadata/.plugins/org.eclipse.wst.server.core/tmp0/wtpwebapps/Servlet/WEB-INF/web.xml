@@ -64,6 +64,7 @@
   <filter-mapping>
   <filter-name>RegisterFilter</filter-name>
   <url-pattern>/RegistrationServlet</url-pattern>
+<!--   <url-pattern>/yo</url-pattern> -->
   </filter-mapping>
   
    <servlet>
@@ -73,6 +74,7 @@
   <servlet-mapping>
     <servlet-name>RegistrationServlet</servlet-name>
     <url-pattern>/RegistrationServlet</url-pattern>
+    <!--   <url-pattern>/yo</url-pattern> -->
   </servlet-mapping>
   
  

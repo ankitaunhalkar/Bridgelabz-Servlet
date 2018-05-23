@@ -10,9 +10,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>.link0</name>
+			<name>.link1</name>
 			<type>2</type>
-			<location>/home/bridgeit/Downloads/tomcat-9.0-doc</location>
+			<location>/home/bridgeit/Downloads/apache-tomcat-9.0.8-src</location>
 		</link>
 	</linkedResources>
 </projectDescription>
