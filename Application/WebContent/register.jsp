@@ -10,13 +10,13 @@
 </head>
 <body>
 <div class="form"> 
-<form action="" method="post">
+<form action="register" method="post">
 
 Username: <input type="text" name="name" id="name"/><br><br>
-Password: <input type="text" name="pass" id="password"/><br><br>
+Password: <input type="text" name="password" id="password"/><br><br>
 Email: <input type="text" name="email" id="email"/><br><br>
 City: <input type="text" name="city" id="city"/><br><br>
-<input class="btncolor" type="submit" value="Register" onclick="return validation()"> 
+<input class="btncolor" type="submit" value="Register" onclick="return validateRegister()"> 
 
 </form>
 </div>

@@ -1,10 +1,26 @@
 package com.bridgelabz.util;
 
 public class User {
+private int id;
 private String name;
 private String password;
 private String email;
 private String city;
+
+public User(String name, String password, String email, String city) {
+	super();
+	this.name = name;
+	this.password = password;
+	this.email = email;
+	this.city = city;
+}
+
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
 public String getName() {
 	return name;
 }

@@ -1,8 +1,8 @@
-function validation() {
+function validateRegister() {
 var username = document.getElementById("name").value;
 var email = document.getElementById("email").value;
-var password = document.getElementById("pass").value;
-var city = document.getElementById("university").value;
+var password = document.getElementById("password").value;
+var city = document.getElementById("city").value;
 if(username == "" || password == "" || email == "" || city == ""){
   alert("Fields are empty");
   return false;
@@ -15,7 +15,7 @@ else {
 
 function validateLogin() {
 	var username = document.getElementById("name").value;
-	var password = document.getElementById("pass").value;
+	var password = document.getElementById("password").value;
 	if(username == "" || password == ""){
 	  alert("Fields are empty");
 	  return false;
