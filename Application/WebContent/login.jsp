@@ -10,10 +10,10 @@
 </head>
 <body>
 <div class="form"> 
-<h1>Login Here</h1><br><br><br>
+<h1>Login Here</h1>
 <form action = "login" method = "post">
-Username:  <input type = "text" name="name" id="name"/><br><br>
-Password:  <input type = "text" name="password" id="password"/><br><br>
+Email:  <input type = "text" name="email" id="email"/><br><br>
+Password:  <input type = "password" name="password" id="password"/><br><br>
 <input class="btncolor" type = "submit" value="Submit" onclick="return validateLogin()"/> 
 <button class="btncolor"><a href="register.jsp">Register</a></button>
 </form>

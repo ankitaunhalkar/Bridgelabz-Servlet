@@ -11,7 +11,7 @@
 <body>
 <div class="form"> 
 <form action="register" method="post">
-
+<h1>Registration</h1>
 Username: <input type="text" name="name" id="name"/><br><br>
 Password: <input type="text" name="password" id="password"/><br><br>
 Email: <input type="text" name="email" id="email"/><br><br>

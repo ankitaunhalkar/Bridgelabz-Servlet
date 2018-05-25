@@ -5,6 +5,7 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  
   <context-param>
     <param-name>dbUrl</param-name>
     <param-value>jdbc:mysql://localhost:3306/application</param-value>

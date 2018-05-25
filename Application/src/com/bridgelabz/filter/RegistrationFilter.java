@@ -27,8 +27,7 @@ public class RegistrationFilter implements Filter {
 		String email = request.getParameter("email");
 		String city = request.getParameter("city");
 		
-		if ((!name.equals("")) && (!email.equals("")) && (!password.equals("")) && (!city.equals(""))) {
-		
+		if ((!name.equals("")) || (!email.equals("")) || (!password.equals("")) || (!city.equals(""))) {
 			chain.doFilter(request, response);// sends request to next servlet
 		} else {
 			out.println("<font color='red'>Please enter all the fields</font>");

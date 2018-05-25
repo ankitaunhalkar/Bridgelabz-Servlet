@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bridgelabz.dao.SqlOperations;
+
 /**
  * Servlet implementation class RegisterationController
  */
@@ -31,15 +33,8 @@ public class RegistrationController extends HttpServlet {
 		String city = request.getParameter("city");
 		
 		Connection con = (Connection) getServletContext().getAttribute("dbConnection");
-		PreparedStatement ps = null;
+		boolean flag = SqlOperations.registration(con,user,password,email,city);
 		
-		try {
-			ps=con.prepareStatement("insert into users(name,password,email,city) values(?,?,?,?)");
-			ps.setString(1, user);
-			ps.setString(2, password);
-			ps.setString(3, email);
-			ps.setString(4, city);
-			boolean flag = ps.execute();
 			if(flag==false)
 			{
 				pw.println("Registration Succesfully! Now login here!");
@@ -50,15 +45,7 @@ public class RegistrationController extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
 				rd.include(request, response);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				ps.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+		
 	}
 
 }

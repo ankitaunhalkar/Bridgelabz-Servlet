@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.bridgelabz.dao.SqlOperations;
+import com.bridgelabz.util.DbConnectionManager;
 import com.bridgelabz.util.User;
 
 /**
@@ -27,29 +29,21 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-		String user = request.getParameter("name");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
 		Connection con = (Connection) getServletContext().getAttribute("dbConnection");
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+		User newuser = SqlOperations.checkLogin(con,email,password);
+		if(newuser!=null)
+		{
+			HttpSession session = request.getSession();
+			session.setAttribute("User", newuser);
+			response.sendRedirect("home.jsp");
+		}
+		else {
+			pw.println("<font color='red'>No user found</font>");
+		}
 
-		try {
-			ps = con.prepareStatement("select name,password,email,city from users where name=? and password=?");
-			ps.setString(1, user);
-			ps.setString(2, password);
-			rs = ps.executeQuery();
-			if (rs != null && rs.next()) {
-				User newuser = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
-				HttpSession session = request.getSession();
-				session.setAttribute("User", newuser);
-				response.sendRedirect("home.jsp");
-			} else {
-				pw.println("<font color='red'>No user found</font>");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} 
 	}
 
 }

@@ -21,14 +21,13 @@ public class LoginFilter implements Filter {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		String name = request.getParameter("name");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 	
-		if ((!name.equals("")) && (!password.equals(""))) {
+		if ((!email.equals("")) || (!password.equals(""))) {
 			chain.doFilter(request, response);// sends request to next servlet
 		} else {
 			out.println("<font color='red'>Please enter all the fields</font>");
-
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.include(request, response);
 		}
