@@ -17,27 +17,28 @@ public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 *  HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 *  HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		Cookie cookies[] = request.getCookies();
-		if(cookies!=null)
-		{
-			for (Cookie cookie : cookies) {
-				if(cookie.getName().equals("JSESSIONID"))
-				{
-					System.out.println(cookie.getValue());
-					break;
-				}
-			}
-		}
+//		Cookie cookies[] = request.getCookies();
+//		if(cookies!=null)
+//		{
+//			for (Cookie cookie : cookies) {
+//				if(cookie.getName().equals("JSESSIONID"))
+//				{
+//					System.out.println(cookie.getValue());
+//					break;
+//				}
+//			}
+//		}
+		
 		//invalidate the session if exists
     	HttpSession session = request.getSession(false);
     	if(session != null){
     		session.removeAttribute("User");
        		session.invalidate();
-    		response.sendRedirect("login.jsp");
+    		response.sendRedirect("loginpage");
     		}
     	}
 

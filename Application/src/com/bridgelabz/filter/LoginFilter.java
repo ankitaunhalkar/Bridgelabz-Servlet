@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-	
+		System.out.println(email+","+password);
 		if ((!email.equals("")) || (!password.equals(""))) {
 			chain.doFilter(request, response);// sends request to next servlet
 		} else {

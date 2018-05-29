@@ -14,7 +14,7 @@
 		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 		
 		if (session.getAttribute("User") == null) {
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("loginpage");
 		} else {
 			user = (User) session.getAttribute("User");
 	%>
@@ -30,9 +30,9 @@
 		Your City:<%=user.getCity()%>
 	</h4>
 		
-	<form action="logout">
-		<input class="btncolor" type="submit" value="Logout">
-	</form>
+
+		<a href="logout" class="btncolor" type="submit">Logout</a>
+
 	<% } %>
 </body>
 </html>

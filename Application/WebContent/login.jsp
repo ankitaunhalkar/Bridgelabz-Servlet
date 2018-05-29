@@ -12,10 +12,10 @@
 <div class="form"> 
 <h1>Login Here</h1>
 <form action = "login" method = "post">
-Email:  <input type = "text" name="email" id="email"/><br><br>
+Email:  <input type = "email" name="email" id="email"/><br><br>
 Password:  <input type = "password" name="password" id="password"/><br><br>
 <input class="btncolor" type = "submit" value="Submit" onclick="return validateLogin()"/> 
-<button class="btncolor"><a href="register.jsp">Register</a></button>
+<button class="btncolor"><a href="registerpage">Register</a></button>
 </form>
 </div>
 </body>

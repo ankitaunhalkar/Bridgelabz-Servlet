@@ -3,10 +3,8 @@ package com.bridgelabz.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bridgelabz.dao.SqlOperations;
-import com.bridgelabz.util.DbConnectionManager;
 import com.bridgelabz.util.User;
 
 /**
@@ -33,15 +30,15 @@ public class LoginController extends HttpServlet {
 		String password = request.getParameter("password");
 
 		Connection con = (Connection) getServletContext().getAttribute("dbConnection");
-		User newuser = SqlOperations.checkLogin(con,email,password);
-		if(newuser!=null)
-		{
+		User newuser = SqlOperations.checkLogin(con, email, password);
+		if (newuser != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("User", newuser);
-			response.sendRedirect("home.jsp");
-		}
-		else {
+			response.sendRedirect("homepage");
+		} else {
 			pw.println("<font color='red'>No user found</font>");
+			RequestDispatcher rd = request.getRequestDispatcher("loginpage");
+			rd.include(request, response);
 		}
 
 	}

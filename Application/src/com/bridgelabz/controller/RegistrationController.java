@@ -3,8 +3,6 @@ package com.bridgelabz.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,11 +36,11 @@ public class RegistrationController extends HttpServlet {
 			if(flag==false)
 			{
 				pw.println("Registration Succesfully! Now login here!");
-				RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("loginpage");
 				rd.include(request, response);
 			}else {
 				pw.println("Registration UnSuccesfully! try Again!");
-				RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("registerpage");
 				rd.include(request, response);
 			}
 		

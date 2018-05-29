@@ -3,9 +3,10 @@
   
   <display-name>Application</display-name>
   <welcome-file-list>
-    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>loginpage</welcome-file>
   </welcome-file-list>
-  
+
+<!-- Context Parameter -->  
   <context-param>
     <param-name>dbUrl</param-name>
     <param-value>jdbc:mysql://localhost:3306/application</param-value>
@@ -18,11 +19,12 @@
     <param-name>dbPassword</param-name>
     <param-value>bridgeit</param-value>
   </context-param>
-  
+ 
+<!-- Listener --> 
   <listener>
   	<listener-class>com.bridgelabz.listener.ConnectionListener</listener-class>
   </listener>
-  
+ 
   <filter>
     <filter-name>registrationfilter</filter-name>
     <filter-class>com.bridgelabz.filter.RegistrationFilter</filter-class>
@@ -39,6 +41,33 @@
     <filter-name>loginfilter</filter-name>
     <url-pattern>/login</url-pattern>
   </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>registerpage</servlet-name>
+  	<jsp-file>/jsp/register.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>registerpage</servlet-name>
+  	<url-pattern>/registerpage</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>loginpage</servlet-name>
+  	<jsp-file>/login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginpage</servlet-name>
+  	<url-pattern>/loginpage</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>homepage</servlet-name>
+  	<jsp-file>/jsp/home.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>homepage</servlet-name>
+  	<url-pattern>/homepage</url-pattern>
+  </servlet-mapping>
   
   <servlet>
   	<servlet-name>register</servlet-name>
